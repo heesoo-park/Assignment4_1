@@ -76,5 +76,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:maxImageSize="20dp"
         app:shapeAppearance="@style/FloatingButtonTheme"
-        app:tint="@color/black" />
+        app:tint="@color/selector_fab_icon_click" />
 </androidx.constraintlayout.widget.ConstraintLayout>
