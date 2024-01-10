@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint_layout_recycler_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingVertical="14dp"
+        android:paddingStart="16dp"
+        android:paddingEnd="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_recycler_item_thumbnail"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            android:background="@drawable/item_round_corners"
+            android:clipToOutline="true"
+            android:src="@drawable/img_sample6"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_recycler_item_title"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="2dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:text="프라다 복조리백"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/iv_recycler_item_thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/iv_recycler_item_thumbnail" />
+
+        <TextView
+            android:id="@+id/tv_recycler_item_seller_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="수원시 영통구 원천동"
+            android:textColor="@color/text_color2"
+            android:textSize="13sp"
+            app:layout_constraintStart_toStartOf="@+id/tv_recycler_item_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recycler_item_title" />
+
+        <TextView
+            android:id="@+id/tv_recycler_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="50,000원"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@+id/tv_recycler_item_seller_address"
+            app:layout_constraintTop_toBottomOf="@+id/tv_recycler_item_seller_address" />
+
+        <ImageView
+            android:id="@+id/iv_recycler_item_chat"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/img_recycler_message"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recycler_item_chat_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_recycler_item_chat_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_recycler_item_chat_count" />
+
+        <TextView
+            android:id="@+id/tv_recycler_item_chat_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="9dp"
+            android:text="10"
+            android:textColor="@color/text_color2"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_recycler_item_favorite"
+            app:layout_constraintEnd_toStartOf="@+id/iv_recycler_item_favorite"
+            app:layout_constraintTop_toTopOf="@+id/iv_recycler_item_favorite" />
+
+        <ImageView
+            android:id="@+id/iv_recycler_item_favorite"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginEnd="2dp"
+            android:src="@drawable/ic_recycler_empty_heart_btn"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_recycler_item_favorite_count"
+            app:layout_constraintEnd_toStartOf="@+id/tv_recycler_item_favorite_count"
+            app:layout_constraintTop_toTopOf="@+id/tv_recycler_item_favorite_count" />
+
+        <TextView
+            android:id="@+id/tv_recycler_item_favorite_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="10"
+            android:textColor="@color/text_color2"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

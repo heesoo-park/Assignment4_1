@@ -1,0 +1,16 @@
+<resources>
+    <!-- 앱 이름 -->
+    <string name="app_name">사과마켓</string>
+    <!-- 디테일 페이지 -->
+    <string name="manner_temperature"><u>매너온도</u></string>
+    <!-- 메인 페이지 -->
+    <string name="dialog_main_exit_title">종료</string>
+    <string name="dialog_main_exit_comment">정말 종료하시겠습니까?</string>
+    <string name="dialog_main_delete_item_title">상품 삭제</string>
+    <string name="dialog_main_delete_item_comment">상품을 정말로 삭제하시겠습니까?</string>
+    <string name="dialog_main_ok_btn">확인</string>
+    <string name="dialog_main_cancel_btn">취소</string>
+    <string name="notification_main_title">키워드 알림</string>
+    <string name="notification_main_comment">설정한 키워드에 대한 알림이 도착했습니다!!</string>
+    <string name="snackbar_detail_favorite_comment">관심 목록에 추가되었습니다.</string>
+</resources>

@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Base.Theme.AppleMarket" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:textColorPrimary">@color/text_color</item>
+        <item name="android:textViewStyle">@style/customTextViewFontStyle</item>
+    </style>
+
+    <style name="Theme.AppleMarket" parent="Base.Theme.AppleMarket" />
+</resources>
