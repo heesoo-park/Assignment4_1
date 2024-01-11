@@ -11,18 +11,13 @@ import com.google.android.material.snackbar.Snackbar
 import java.text.DecimalFormat
 
 class DetailActivity : AppCompatActivity() {
-
-    companion object {
-        private const val EXTRA_MARKET_ITEM = "item"
-    }
-
     private lateinit var binding: ActivityDetailBinding
 
     private val item: MarketItem? by lazy {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-            intent?.getParcelableExtra(EXTRA_MARKET_ITEM, MarketItem::class.java)
+            intent?.getParcelableExtra(IntentKeys.EXTRA_ITEM, MarketItem::class.java)
         } else {
-            intent?.getParcelableExtra(EXTRA_MARKET_ITEM)
+            intent?.getParcelableExtra(IntentKeys.EXTRA_ITEM)
         }
     }
 
@@ -35,7 +30,7 @@ class DetailActivity : AppCompatActivity() {
 
         // 상단 뒤로가기 화살표 이미지 클릭 시 디테일 페이지 종료
         binding.ivDetailArrowBackBtn.setOnClickListener {
-            intent.putExtra(EXTRA_MARKET_ITEM, item)
+            intent.putExtra(IntentKeys.EXTRA_ITEM, item)
             setResult(RESULT_OK, intent)
             finish()
         }

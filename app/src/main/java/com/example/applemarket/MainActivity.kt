@@ -1,30 +1,21 @@
 package com.example.applemarket
 
-import android.Manifest
 import android.app.NotificationChannel
 import android.app.NotificationManager
-import android.app.ProgressDialog.show
-import android.content.ClipData.Item
 import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.provider.Settings
-import android.util.Log
 import android.view.View
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.activity.result.ActivityResultLauncher
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
-import androidx.core.app.ActivityCompat
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.view.isVisible
@@ -36,9 +27,9 @@ class MainActivity : AppCompatActivity() {
     private var resultLauncher: ActivityResultLauncher<Intent> = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { result ->
         if (result.resultCode == RESULT_OK) {
             val resultItem = if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
-                result?.data?.getParcelableExtra("item", MarketItem::class.java)
+                result?.data?.getParcelableExtra(IntentKeys.EXTRA_ITEM, MarketItem::class.java)
             } else {
-                result?.data?.getParcelableExtra("item")
+                result?.data?.getParcelableExtra(IntentKeys.EXTRA_ITEM)
             }
 
             resultItem?.let {
@@ -168,7 +159,7 @@ class MainActivity : AppCompatActivity() {
         adapter.itemClick = object : ItemAdapter.ItemClick {
             override fun onClick(view: View, position: Int) {
                 var intent = Intent(this@MainActivity, DetailActivity::class.java)
-                intent.putExtra("item", dataList[position])
+                intent.putExtra(IntentKeys.EXTRA_ITEM, dataList[position])
                 resultLauncher.launch(intent)
             }
         }
