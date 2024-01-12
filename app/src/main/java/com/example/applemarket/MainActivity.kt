@@ -35,10 +35,10 @@ class MainActivity : AppCompatActivity() {
             resultItem?.let {
                 dataList.find { it.id == resultItem.id }?.apply {
                     isClicked = resultItem.isClicked
+                }.let {
+                    adapter.notifyItemChanged(dataList.indexOf(it))
                 }
             }
-
-            adapter.notifyDataSetChanged()
         }
     }
 
